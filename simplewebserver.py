@@ -17,11 +17,11 @@ import webbrowser
 from threading import Timer
 
 
-def startbrowser(port):
+def startbrowser(*port):
     """
     startbrowser
     """
-    webbrowser.open("http://0.0.0.0:" + str(port))
+    webbrowser.open("http://0.0.0.0:" + str(port[0]))
 
 
 def main():
@@ -29,7 +29,7 @@ def main():
     main
     """
     port = random.randint(7000, 8000)
-    t = Timer(1.5, startbrowser, port)
+    t = Timer(1.5, startbrowser, [port])
     Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
     httpd = SocketServer.TCPServer(("", port    ), Handler)
     print "\033[93m" + "serving " + os.getcwd() + "\non port", str(port) + "\033[0m"
