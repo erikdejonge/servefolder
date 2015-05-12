@@ -224,7 +224,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}		set theStr to quoted form of the POSIX path of item 1 of input	set commandString to "cd " &amp; theStr &amp; "; python2 ~/workspace/serverfolder/simplewebserver.py"	tell application "Terminal"		activate				set windowCount to (count of the windows)		if windowCount is greater than 0 then			repeat with w from 1 to windowCount				if window 1 is busy then					set frontmost of window 1 to false				else					do script commandString in window 1					set frontmost of window 1 to true					return				end if			end repeat		end if		tell window 1			do script commandString			set frontmost to true		end tell	end tell		return inputend run</string>
+					<string>on run {input, parameters}		set theStr to quoted form of the POSIX path of item 1 of input	set commandString to "cd " &amp; theStr &amp; "; python2 ~/workspace/servefolder/simplewebserver.py"	tell application "Terminal"		activate				set windowCount to (count of the windows)		if windowCount is greater than 0 then			repeat with w from 1 to windowCount				if window 1 is busy then					set frontmost of window 1 to false				else					do script commandString in window 1					set frontmost of window 1 to true					return				end if			end repeat		end if		tell window 1			do script commandString			set frontmost to true		end tell	end tell		return inputend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -288,19 +288,19 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>2C3172BD-9732-4863-8F2D-D044B45CFCFF</key>
-		<dict>
-			<key>from</key>
-			<string>891BF873-09D0-48AC-A0D2-051DF86A94E5 - 891BF873-09D0-48AC-A0D2-051DF86A94E5</string>
-			<key>to</key>
-			<string>0E8017A2-D52C-4EBE-B49A-ACE9C9104864 - 0E8017A2-D52C-4EBE-B49A-ACE9C9104864</string>
-		</dict>
-		<key>ABCEFD86-D36A-435A-9DB6-DBE6672276E7</key>
+		<key>07A4661A-F51E-47DA-9254-EA75D9BDE0C3</key>
 		<dict>
 			<key>from</key>
 			<string>0E8017A2-D52C-4EBE-B49A-ACE9C9104864 - 0E8017A2-D52C-4EBE-B49A-ACE9C9104864</string>
 			<key>to</key>
 			<string>2255A8F5-319B-4D57-B92F-45CA4D8591CC - 2255A8F5-319B-4D57-B92F-45CA4D8591CC</string>
+		</dict>
+		<key>232CF9BC-6943-4430-AB56-461D1184CCA4</key>
+		<dict>
+			<key>from</key>
+			<string>891BF873-09D0-48AC-A0D2-051DF86A94E5 - 891BF873-09D0-48AC-A0D2-051DF86A94E5</string>
+			<key>to</key>
+			<string>0E8017A2-D52C-4EBE-B49A-ACE9C9104864 - 0E8017A2-D52C-4EBE-B49A-ACE9C9104864</string>
 		</dict>
 	</dict>
 	<key>workflowMetaData</key>
