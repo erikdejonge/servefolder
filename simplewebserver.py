@@ -19,7 +19,8 @@ from threading import Timer
 
 def startbrowser(*port):
     """
-    startbrowser
+    @type port: list
+    @return: None
     """
     webbrowser.open("http://0.0.0.0:" + str(port[0]))
 
@@ -30,15 +31,15 @@ def main():
     """
     port = random.randint(7000, 8000)
     t = Timer(1.5, startbrowser, [port])
-    Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
-    httpd = SocketServer.TCPServer(("", port    ), Handler)
+    handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+    httpd = SocketServer.TCPServer(("", port), handler)
     print "\033[93m" + "serving " + os.getcwd() + "\non port", str(port) + "\033[0m"
     print "\033[90m"
 
     t.start()
     try:
         httpd.serve_forever()
-    except KeyboardInterrupt as e:
+    except KeyboardInterrupt:
         print "ctrl-c exit"
     finally:
         print "\033[0m"
