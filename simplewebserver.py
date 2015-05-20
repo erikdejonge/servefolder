@@ -33,7 +33,7 @@ def main():
     t = Timer(1.5, startbrowser, [port])
     handler = SimpleHTTPServer.SimpleHTTPRequestHandler
     httpd = SocketServer.TCPServer(("", port), handler)
-    print "\033[93m" + "serving " + os.getcwd() + "\non port", str(port) + "\033[0m"
+    print "\033[33m" + "serving " + os.getcwd() + "\non port", str(port) + "\033[0m"
     print "\033[90m"
 
     t.start()
